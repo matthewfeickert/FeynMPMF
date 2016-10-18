@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage{feynmp}
+%\usepackage{pst-pdf}
+\pagestyle{empty}
+
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\begin{document}
+\unitlength = 1mm	% Defines unit length for Feynman Diagrams
+
+%%%%%%%%%%%%%%%%%   FIGURE   %%%%%%%%%%%%%%%%%
+\begin{figure}[h!tbp]
+\centering
+\bigskip
+\begin{fmffile}{example}
+\begin{fmfgraph*}(40,25)
+%%%% VERTICIES %%%%
+\fmfleft{i1,i2}
+\fmfright{o1,o2}
+%%%% PARTICLES %%%%%%
+\fmflabel{$p_2^i$}{i1}
+\fmflabel{$p_1^i$}{i2}
+\fmflabel{$p_2^f$}{o1}
+\fmflabel{$p_1^f$}{o2}
+%%%%INTERACTIONS%%%%%
+\fmf{plain}{i1,v1}
+\fmf{plain}{i2,v2}
+%%%
+\fmf{plain,label=$q$,left=0.4,tension=0.2}{v1,v2}
+\fmf{plain,label=$k$,right=0.4,tension=0.2}{v1,v2}
+%%%
+\fmf{plain}{v1,o1}
+\fmf{plain}{v2,o2}
+%%%
+\fmfdot{v1,v2}
+%%%%%%%%%%%%%%
+\end{fmfgraph*}
+\end{fmffile}
+\bigskip
+%\caption{Put the caption in your Figure instead}
+%\label{fig:example}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
